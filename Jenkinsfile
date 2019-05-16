@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Build'){
             steps {
-                bat 'mvn clean package'
+                sh 'mvn clean package'
             }
             post {
                 success {
@@ -14,7 +14,12 @@ pipeline {
         }
         stage ('Deploy to Staging'){
             steps {
-                build job: 'deploy-to-staging'
+                build job: 'Udemy-DeployToStaging'
+            }
+        }
+		stage ('Deploy to Prod'){
+            steps {
+                build job: 'udemy-DeploytoProd'
             }
         }
     }
