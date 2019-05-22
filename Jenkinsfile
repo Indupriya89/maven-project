@@ -27,7 +27,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-					    echo 'Entered Staging'
+					    echo 'Enter Staging'
                         sh "scp -i /home/indu/.ssh/tomcat-ubuntu.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat8/webapps"
                     }
                 }
