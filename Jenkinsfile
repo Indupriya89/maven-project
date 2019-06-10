@@ -28,14 +28,14 @@ stages{
                 stage ('Deploy to Staging'){
                     steps {
 					    echo 'Enter Staging'
-                        sh "cp -i **/target/*.war localhost:/opt/tomcat/apache-tomcat-9.0.19/webapps"
+                        sh "cp -i **/target/*.war /opt/tomcat/apache-tomcat-9.0.19/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
 					     echo 'Entered Production'
-                        sh "cp -i **/target/*.war localhost:/opt/tomcat/apache-tomcat-prod/webapps"
+                        sh "cp -i **/target/*.war /opt/tomcat/apache-tomcat-prod/webapps"
                     }
                 }
             }
